@@ -1,0 +1,396 @@
+
+  <!DOCTYPE html>
+  <html lang="en">
+  <head>
+    <title>Live Designer!</title>
+    <meta charset="utf-8">
+    <!--bootstrap and resposive screen response lib-->
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+    <link href="../public/css/metisMenu.min.css" rel="stylesheet">
+    <link href="../public/css/timeline.css" rel="stylesheet">
+    <link href="../public/css/startmin.css" rel="stylesheet">
+    <link href="../public/css/morris.css" rel="stylesheet">
+    <script src="../public/js/metisMenu.min.js"></script>
+    <script src="../public/js/startmin.js"></script>
+    <script src="../public/js/download.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta charset="utf-8">
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+    <!--css of codemirror-->
+    <link rel="stylesheet" href="../libs/codemirror/doc/docs.css">
+    <link rel="stylesheet" href="../libs/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="../libs/codemirror/addon/hint/show-hint.css">
+    <link rel="stylesheet" href="../libs/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="../libs/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="../libs/codemirror/addon/fold/foldgutter.css">
+    <link rel="stylesheet" href="../libs/codemirror/addon/display/fullscreen.css">
+    <link rel="stylesheet" href="../libs/codemirror/lib/codemirror.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/3024-day.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/3024-night.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/abcdef.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/ambiance.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/base16-dark.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/bespin.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/base16-light.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/blackboard.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/cobalt.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/colorforth.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/dracula.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/duotone-dark.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/duotone-light.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/eclipse.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/elegant.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/erlang-dark.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/hopscotch.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/icecoder.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/isotope.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/lesser-dark.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/liquibyte.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/material.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/mbo.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/mdn-like.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/midnight.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/monokai.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/neat.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/neo.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/night.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/panda-syntax.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/paraiso-dark.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/paraiso-light.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/pastel-on-dark.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/railscasts.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/rubyblue.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/seti.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/solarized.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/the-matrix.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/tomorrow-night-bright.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/tomorrow-night-eighties.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/ttcn.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/twilight.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/vibrant-ink.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/xq-dark.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/xq-light.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/yeti.css">
+    <link rel="stylesheet" href="../libs/codemirror/theme/zenburn.css">
+    <link rel="stylesheet" href="../public/css/font-awesome.min.css"  >
+    <!--codemirror js lib-->
+    <script src="../libs/codemirror/lib/codemirror.js"></script>
+    <script src="../libs/codemirror/mode/clike/clike.js"></script>
+    <script src="../libs/codemirror/addon/fold/foldcode.js"></script>
+    <script src="../libs/codemirror/addon/fold/foldgutter.js"></script>
+    <script src="../libs/codemirror/addon/fold/brace-fold.js"></script>
+    <script src="../libs/codemirror/addon/fold/xml-fold.js"></script>
+    <script src="../libs/codemirror/addon/fold/indent-fold.js"></script>
+    <script src="../libs/codemirror/addon/fold/comment-fold.js"></script>
+    <script src="../libs/codemirror/mode/javascript/javascript.js"></script>
+    <script src="../libs/codemirror/mode/xml/xml.js"></script>
+    <script src="../libs/codemirror/mode/css/css.js"></script>
+    <script src="../libs/codemirror/mode/htmlmixed/htmlmixed.js"></script>
+    <script src="../libs/codemirror/mode/python/python.js"></script>
+    <script src="../libs/codemirror/addon/selection/active-line.js"></script>
+    <script src="../libs/codemirror/addon/hint/show-hint.js"></script>
+    <script src="../libs/codemirror/addon/hint/javascript-hint.js"></script>
+    <script src="../libs/codemirror/addon/hint/anyword-hint.js"></script>
+    <script src="../libs/codemirror/addon/edit/closebrackets.js"></script>
+    <script src="../libs/codemirror/addon/display/fullscreen.js"></script>
+    <script src="../libs/codemirror/addon/scroll/annotatescrollbar.js"></script>
+    <script src="../libs/codemirror/addon/search/matchesonscrollbar.js"></script>
+    <script src="../libs/codemirror/addon/search/searchcursor.js"></script>
+    <script src="../libs/codemirror/addon/search/match-highlighter.js"></script>
+    <style>
+        .cm-s-base16-light.CodeMirror {
+          background: #f5f5f5;
+          color: #202020;
+        }
+        .CodeMirror {
+          border: 1px solid #481f1f;
+          font-size: 13px;
+        }
+        html,body {height:100%;}
+        .container-fluid{
+          min-height:100%;
+          overflow:hidden;
+        }
+        #col1,#col2,#col3{
+          margin-bottom: -9999px;
+          padding-bottom: 9999px;
+        }
+
+        .navbar-brand,
+        .navbar-nav li a {
+            line-height: 25px;
+            height: 25px;
+            padding-top: 0;
+
+        }
+        .container-fluid {
+  padding-right: 15px;
+  padding-left: 15px;
+  margin-right: auto;
+  margin-left: auto;
+}
+.row {
+  margin-right: -15px;
+  margin-left: -15px;
+}
+    </style>
+    <script>
+
+  </script>
+  </head>
+  <body>
+
+        <nav class="navbar navbar-inverse" style="background-color: black;margin-bottom: 2px;">
+      <div class="container-fluid">
+        <div class="navbar-header">
+          <h1 class="navbar-brand" style="font-family: cursive;font-size: 30px;color: white;" >lívє dєsígnєr!</h1>
+        </div>
+      </div>
+    </nav>
+
+  <div class="container" style="margin-right: 0px;margin-left: 0px;width: 100%;">
+    <div class="row" style="background-color: #f2f2f2;border:solid 2px #5d64be;">
+      <br/>
+      <div class="col-sm-6">
+        <select class="col-sm-4" name="theme-select"style="    margin-right: 10px;" onchange="selectTheme()" id="select" >
+                  <option selected>theme_select</option>
+                  <option>3024-day</option>
+                  <option>3024-night</option>
+                  <option>abcdef</option>
+                  <option>ambiance</option>
+                  <option>base16-dark</option>
+                  <option>base16-light</option>
+                  <option>bespin</option>
+                  <option>blackboard</option>
+                  <option>cobalt</option>
+                  <option>colorforth</option>
+                  <option>dracula</option>
+                  <option>duotone-dark</option>
+                  <option>duotone-light</option>
+                  <option>eclipse</option>
+                  <option>elegant</option>
+                  <option>erlang-dark</option>
+                  <option>hopscotch</option>
+                  <option>icecoder</option>
+                  <option>isotope</option>
+                  <option>lesser-dark</option>
+                  <option>liquibyte</option>
+                  <option>material</option>
+                  <option>mbo</option>
+                  <option>mdn-like</option>
+                  <option>midnight</option>
+                  <option>monokai</option>
+                  <option>neat</option>
+                  <option>neo</option>
+                  <option>night</option>
+                  <option>panda-syntax</option>
+                  <option>paraiso-dark</option>
+                  <option>paraiso-light</option>
+                  <option>pastel-on-dark</option>
+                  <option>railscasts</option>
+                  <option>rubyblue</option>
+                  <option>seti</option>
+                  <option>solarized dark</option>
+                  <option>solarized light</option>
+                  <option>the-matrix</option>
+                  <option>tomorrow-night-bright</option>
+                  <option>tomorrow-night-eighties</option>
+                  <option>ttcn</option>
+                  <option>twilight</option>
+                  <option>vibrant-ink</option>
+                  <option>xq-dark</option>
+                  <option>xq-light</option>
+                  <option>yeti</option>
+                  <option>zenburn</option>
+                </select>
+                <button type="button" class="button btn-info" style="border-radius: 25px;margin-bottom: 2px;" onclick="runMe();">Run Me Again!</button>
+                <button type="button" class="button btn-info" style="border-radius: 25px;margin-bottom: 2px;"  id="download"  >Download It</button>
+                <input type="text" placeholder="File name with .ext" style="border-radius: 25px;margin-bottom: 2px;" hidden/>
+
+
+        <br/>
+  <textarea id="code" style="border:solid 2px gray;height:100%;width:100%;" ></textarea>
+        <br/>
+      </div>
+      <br/>
+      <div class="col-sm-6" >
+
+        <div id="iframecontainer">
+            <div id="iframe">
+              <div id="iframewrapper">
+                <iframe frameborder="0" id="liveit" name="iframeResult" style="border:solid 2px gray;height:652px;width:100%;" ></iframe>
+              </div>
+            </div>
+          </div>
+      </div>
+    </div>
+  </div>
+
+
+  <script>
+  //mixed mode config
+  var myModeSpec = {
+    name: "htmlmixed",
+    tags: {
+      style: [["type", /^text\/(x-)?scss$/, "text/x-scss"],
+              [null, null, "css"]],
+      custom: [[null, null, "customMode"]]
+    }
+  }
+
+  //editor initialisation
+  var editor = CodeMirror.fromTextArea(document.getElementById("code"), {
+    styleActiveLine: true,
+    lineNumbers: true,
+    lineWrapping: true,
+    rtlMoveVisually: true,
+    matchBrackets: true,
+    mode: myModeSpec,
+    tabSize: 3,
+    smartIndent: true,
+    viewportMargin: 10,
+    dragDrop: false,
+    extraKeys: {
+        "Ctrl-Q": function(cm) { cm.foldCode(cm.getCursor()); },
+        "Ctrl-Space": "autocomplete",
+        "F11": function(cm) { cm.setOption("fullScreen", !cm.getOption("fullScreen")); },
+        "Esc": function(cm) { if (cm.getOption("fullScreen")) cm.setOption("fullScreen", false); }
+    },
+    foldGutter: true,
+    gutters: ["CodeMirror-linenumbers", "CodeMirror-foldgutter"],
+    autoCloseBrackets: true,
+    highlightSelectionMatches: { showToken: /\w/, annotateScrollbar: true }
+  });
+  editor.setSize(null, 348);
+
+  var ExcludedIntelliSenseTriggerKeys = {
+    "8": "backspace",
+    "9": "tab",
+    "13": "enter",
+    "16": "shift",
+    "17": "ctrl",
+    "18": "alt",
+    "19": "pause",
+    "20": "capslock",
+    "27": "escape",
+    "33": "pageup",
+    "34": "pagedown",
+    "35": "end",
+    "36": "home",
+    "37": "left",
+    "38": "up",
+    "39": "right",
+    "40": "down",
+    "45": "insert",
+    "46": "delete",
+    "91": "left window key",
+    "92": "right window key",
+    "93": "select",
+    "107": "add",
+    "109": "subtract",
+    "110": "decimal point",
+    "111": "divide",
+    "112": "f1",
+    "113": "f2",
+    "114": "f3",
+    "115": "f4",
+    "116": "f5",
+    "117": "f6",
+    "118": "f7",
+    "119": "f8",
+    "120": "f9",
+    "121": "f10",
+    "122": "f11",
+    "123": "f12",
+    "144": "numlock",
+    "145": "scrolllock",
+    "186": "semicolon",
+    "187": "equalsign",
+    "188": "comma",
+    "189": "dash",
+    "190": "period",
+    "191": "slash",
+    "192": "graveaccent",
+    "220": "backslash",
+    "222": "quote"};
+
+ function runMe(){
+   var sourcecode=editor.getValue();
+   //$("#liveit").contents().find('html').html(sourcecode);
+   var iframe_doc =$('#liveit')[0].contentDocument;
+
+     iframe_doc.open();
+     iframe_doc.write(sourcecode);
+     iframe_doc.close();
+ }
+
+  editor.on("keyup", function(editor, event) {
+      //source code injection in target screen
+        var sourcecode=editor.getValue();
+        //$("#liveit").contents().find('html').html(sourcecode);
+        var iframe_doc =$('#liveit')[0].contentDocument;
+
+      		iframe_doc.open();
+      		iframe_doc.write(sourcecode);
+      		iframe_doc.close();
+//key suggestion
+    var __Cursor = editor.getDoc().getCursor();
+    var __Token = editor.getTokenAt(__Cursor);
+
+    if (!editor.state.completionActive &&
+        !ExcludedIntelliSenseTriggerKeys[(event.keyCode || event.which).toString()] &&
+        (event.type == "keyup")) {
+        CodeMirror.commands.autocomplete(editor, null, { completeSingle: false });
+    }
+  });
+  var input = document.getElementById("select");
+
+  function selectTheme() {
+    var theme = input.options[input.selectedIndex].textContent;
+    editor.setOption("theme", theme);
+    location.hash = "#" + theme;
+  }
+  var choice = (location.hash && location.hash.slice(1)) ||
+    (document.location.search &&
+        decodeURIComponent(document.location.search.slice(1)));
+  if (choice) {
+    input.value = choice;
+    editor.setOption("theme", choice);
+  }
+  CodeMirror.on(window, "hashchange", function() {
+    var theme = location.hash.slice(1);
+    if (theme) { input.value = theme;
+        selectTheme(); }
+  });
+//editor height first parameter,width second parameter
+  editor.setSize(null,"652px");
+
+//download segment
+var cnt=1;
+  $("#download").click(function(e){
+    var filename;
+    var textbox = $('input:text');
+    textbox.show();
+
+    filename=textbox.val();
+         //while(filename!=undefined){}
+
+if(cnt%2==0){
+           var codedownload= (editor.getValue()).toString();;
+           //encodeURIComponent(codedownload);
+           download(new Blob([codedownload]), filename, "text");
+           textbox.hide();
+           textbox.val('');
+         }           cnt++;
+
+
+  });
+
+
+
+  </script>
+
+  </body>
+  </html>
